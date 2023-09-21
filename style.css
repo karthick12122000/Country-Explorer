@@ -13,3 +13,33 @@ header{
     align-items: center;
     padding-left: 80px;
 }
+
+
+.name{
+    width: 80%;
+}
+.mode{
+    width: 20%;
+}
+.btn{
+    background: none;
+    border: none;
+    display: flex;
+   gap: 10px;
+   cursor: pointer;
+  
+}
+.btn img{
+    width: 20px;
+    height: 20px;
+    transform: rotate(335deg);
+}
+.btn span{
+    font-size: 1.1rem;
+}
+ion-icon {
+    font-size: 1.5rem;
+}
+.btn:active{
+    transform: scale(0.9);
+}
