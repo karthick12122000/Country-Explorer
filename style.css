@@ -19,11 +19,13 @@
   /* (Dark Mode Text & Light Mode Elements) */
   --White: hsl(0, 0%, 100%);
 }
-
+body {
+  background: var(--Very_Light_Gray);
+}
 header {
   width: 100%;
-  height: 80px;
-  box-shadow: 1px 0px 5px 0px rgba(90, 90, 90, 0.75);
+  height: 75px;
+  box-shadow: 1px 0px 5px 0px rgba(31, 29, 29, 0.75);
   display: flex;
   align-items: center;
   padding-left: 80px;
@@ -36,8 +38,7 @@ header {
 .mode {
   width: 20%;
 }
-
-.btn {
+.mode .btn {
   background: none;
   border: none;
   display: flex;
@@ -63,6 +64,9 @@ ion-icon {
 .btn:active {
   transform: scale(0.9);
 }
+main {
+  padding: 75px;
+}
 .container {
   width: 100%;
   display: flex;
@@ -75,11 +79,16 @@ ion-icon {
   height: 335px;
   border-radius: 5px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.card:active {
+  transform: scale(0.9);
 }
 .card img {
   width: 100%;
   height: 160px;
   object-fit: cover;
+  border-radius: 5px 5px 0px 0px;
 }
 .card div {
   padding: 25px;
@@ -92,4 +101,20 @@ ion-icon {
 }
 .dark .card {
   background: var(--DarkBlue);
+}
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+.back {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 5px;
 }
