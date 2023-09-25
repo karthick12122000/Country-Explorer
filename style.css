@@ -42,6 +42,8 @@ header {
   background: none;
   border: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
   cursor: pointer;
   transition: 0.5s;
@@ -76,7 +78,7 @@ main {
 }
 .card {
   width: 265px;
-  height: 335px;
+  min-height: 335px;
   border-radius: 5px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -117,4 +119,130 @@ main {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 5px;
+}
+.back:active {
+  transform: scale(0.9);
+}
+.borders {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.borders span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.btn__border {
+  min-width: 50px;
+  min-height: 30px;
+  background: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 5px;
+  background: var(--White);
+  cursor: pointer;
+  padding: 10px;
+}
+.dark .btn__border {
+  background: var(--DarkBlue);
+  color: var(--White);
+}
+.btn__border:active {
+  transform: scale(0.9);
+}
+.dwcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 78px;
+}
+
+.dwcontainer > div {
+  width: 50%;
+}
+.dwsubcontainer1 img {
+  width: 500px;
+  height: 400px;
+  object-fit: contain;
+}
+.dwsub__details {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dwsub__details div {
+  width: 50%;
+}
+.dwsub__details p {
+  padding: 5px;
+}
+.dwsubcontainer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 45px;
+}
+
+/* /////////////// mobile */
+@media screen and (max-width: 1200px) {
+  .dwsubcontainer2 {
+    padding-top: 32px;
+  }
+  .dwcontainer div {
+    width: 100%;
+  }
+  .dwsub__details div:nth-child(2) {
+    padding-top: 35px;
+  }
+  .name {
+    width: 65%;
+  }
+
+  .mode {
+    width: 35%;
+  }
+}
+
+/* /////////////// mobile */
+@media screen and (max-width: 500px) {
+  header {
+    padding: 0px 30px;
+  }
+  .name {
+    width: 65%;
+  }
+  .name h1 {
+    font-size: 1.2rem;
+  }
+  main {
+    padding: 30px;
+  }
+  .card {
+    width: 100%;
+  }
+  .mode {
+    width: 35%;
+  }
+  .btn span,
+  ion-icon {
+    font-size: 0.9rem;
+  }
+  .dwcontainer {
+    margin-top: 40px;
+  }
+  .dwsubcontainer1 img {
+    width: 300px;
+    height: 200px;
+  }
+  .dwsubcontainer2 {
+    padding-top: 32px;
+  }
+  .dwcontainer div {
+    width: 100%;
+  }
+  .dwsub__details div:nth-child(2) {
+    padding-top: 35px;
+  }
+  .borders span {
+    width: 100%;
+  }
 }

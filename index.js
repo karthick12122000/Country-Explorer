@@ -8,7 +8,6 @@ fetch(
 )
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     data.forEach((n) => {
       let card = document.createElement("div");
       let aTag = document.createElement("a");
@@ -21,6 +20,7 @@ fetch(
       let region = document.createElement("p");
       let capital = document.createElement("p");
       img.src = n.flags.png;
+      img.setAttribute("alt", "flags.png");
       name.innerText = n.name.common;
       population.innerHTML = "<b>Population:</b> " + n.population;
       region.innerHTML = "<b>Region:</b> " + n.region;
