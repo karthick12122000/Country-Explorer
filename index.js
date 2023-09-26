@@ -44,6 +44,7 @@ let body = document.querySelector("body");
 let header = document.querySelector("header");
 let icon = btn.querySelector(".btn__icon");
 let btnText = btn.querySelector(".btn__text");
+let fdiv = document.querySelector(".fdiv");
 
 btn.addEventListener("click", () => {
   if (btnText.innerText != "Light Mode") {
@@ -54,6 +55,7 @@ btn.addEventListener("click", () => {
     btnText.innerText = "Light Mode";
     btn.style.color = "var(--White)";
     cont.classList.add("dark");
+    fdiv.classList.add("dark");
     var isDarkModeEnabled = true;
   } else {
     body.style.background = "var(--Very_Light_Gray)";
@@ -63,6 +65,8 @@ btn.addEventListener("click", () => {
     btnText.innerText = "Dark Mode";
     btn.style.color = "var(--Very_Dark_Blue1)";
     cont.classList.remove("dark");
+    fdiv.classList.remove("dark");
+
     var isDarkModeEnabled = false;
   }
   /////////store the mode value in local storage
@@ -78,4 +82,70 @@ if (localStorage.getItem("dark-mode") === "true") {
   btnText.innerText = "Light Mode";
   btn.style.color = "var(--White)";
   cont.classList.add("dark");
+  fdiv.classList.add("dark");
+}
+///////////////--------------------search
+function search() {
+  let sValue = document.getElementById("search");
+
+  let card = document.querySelectorAll(".card");
+
+  let c = 0;
+  card.forEach((n) => {
+    if (
+      !n
+        .querySelector("h2")
+        .innerText.toLowerCase()
+        .startsWith(sValue.value.toLowerCase())
+    ) {
+      n.style.display = "none";
+      c += 1;
+    } else {
+      n.style.display = "block";
+    }
+
+    if (c == card.length) {
+      let result = document.createElement("h2");
+      result.setAttribute("id", "info");
+      result.innerText = "No results have been found";
+      cont.appendChild(result);
+    } else {
+      var info = document.getElementById("info");
+      if (info != null) {
+        cont.removeChild(info);
+      }
+    }
+  });
+}
+
+//////////////--------------------Filter
+let select = document.getElementById("Filter");
+select.value = "";
+// Filter By Region
+function filter() {
+  let sValue = select.value;
+
+  let card = document.querySelectorAll(".card");
+
+  let c = 0;
+  card.forEach((n) => {
+    if (n.querySelectorAll("p")[1].innerText.substring(8) != sValue) {
+      n.style.display = "none";
+      c += 1;
+    } else {
+      n.style.display = "block";
+    }
+
+    if (c == card.length) {
+      let result = document.createElement("h2");
+      result.setAttribute("id", "info");
+      result.innerText = "No results have been found";
+      cont.appendChild(result);
+    } else {
+      var info = document.getElementById("info");
+      if (info != null) {
+        cont.removeChild(info);
+      }
+    }
+  });
 }

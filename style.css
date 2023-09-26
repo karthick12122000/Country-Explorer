@@ -181,7 +181,59 @@ main {
   justify-content: center;
   gap: 45px;
 }
+.fdiv {
+  padding-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.fdiv > div {
+  width: 50%;
+}
+.fdiv--search span {
+  display: block;
+  max-width: 500px;
+  height: 60px;
+  background: var(--White);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+ion-icon[name="search-outline"] {
+  color: var(--Very_Dark_Blue);
+  width: 20%;
+}
+#search {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  background: none;
+}
 
+.dark ion-icon[name="search-outline"],
+.dark #search {
+  color: var(--White);
+}
+.fdiv--filter {
+  position: relative;
+}
+.fdiv--filter select {
+  width: 200px;
+  height: 60px;
+  background: var(--White);
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 20px;
+  font-size: 1rem;
+  position: absolute;
+  right: 0px;
+}
+.dark .fdiv--search span,
+.dark select {
+  background: var(--DarkBlue);
+  color: var(--White);
+}
 /* /////////////// mobile */
 @media screen and (max-width: 1200px) {
   .dwsubcontainer2 {
@@ -244,5 +296,15 @@ main {
   }
   .borders span {
     width: 100%;
+  }
+  .fdiv {
+    gap: 20px;
+  }
+  .fdiv > div {
+    width: 100%;
+  }
+
+  .fdiv--filter select {
+    position: initial;
   }
 }

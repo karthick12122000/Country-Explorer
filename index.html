@@ -27,6 +27,28 @@
       </div>
     </header>
     <main>
+      <div class="fdiv">
+        <div class="fdiv--search">
+          <span>
+            <ion-icon name="search-outline"></ion-icon>
+            <input
+              type="text"
+              id="search"
+              placeholder="Search for a country..."
+              oninput="search()"
+            />
+          </span>
+        </div>
+        <div class="fdiv--filter">
+          <select id="Filter" name="Filter" onchange="filter()">
+            <option value="Africa">Africa</option>
+            <option value="Americas">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="oceania">oceania</option>
+          </select>
+        </div>
+      </div>
       <div class="container"></div>
     </main>
     <script
