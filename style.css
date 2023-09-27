@@ -217,7 +217,12 @@ ion-icon[name="search-outline"] {
 .fdiv--filter {
   position: relative;
 }
-.fdiv--filter select {
+.fdiv--filter > div {
+  position: absolute;
+  right: 0px;
+}
+
+.fdiv--filter div select {
   width: 200px;
   height: 60px;
   background: var(--White);
@@ -226,13 +231,32 @@ ion-icon[name="search-outline"] {
   border: none;
   padding: 20px;
   font-size: 1rem;
-  position: absolute;
-  right: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
 }
 .dark .fdiv--search span,
 .dark select {
   background: var(--DarkBlue);
   color: var(--White);
+}
+
+.filter__Name {
+  display: flex;
+  position: absolute;
+  width: 200px;
+  top: 20px;
+  right: -20px;
+  z-index: 0.5;
+  cursor: pointer;
+}
+
+ion-icon[name="close-circle-outline"] {
+  position: absolute;
+  right: 28px;
+}
+ion-icon[name="close-circle-outline"]:hover {
+  color: red;
 }
 /* /////////////// mobile */
 @media screen and (max-width: 1200px) {
@@ -304,7 +328,10 @@ ion-icon[name="search-outline"] {
     width: 100%;
   }
 
-  .fdiv--filter select {
+  .fdiv--filter div {
     position: initial;
+  }
+  .filter__Name {
+    display: flex;
   }
 }

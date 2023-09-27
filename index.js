@@ -123,6 +123,10 @@ let select = document.getElementById("Filter");
 select.value = "";
 // Filter By Region
 function filter() {
+  let fvalue = document.querySelector(".filter__Name");
+
+  console.log(fvalue.innerText);
+  fvalue.innerText = "";
   let sValue = select.value;
 
   let card = document.querySelectorAll(".card");
