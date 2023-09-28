@@ -222,7 +222,7 @@ ion-icon[name="search-outline"] {
   right: 0px;
 }
 
-.fdiv--filter div select {
+.select {
   width: 200px;
   height: 60px;
   background: var(--White);
@@ -235,8 +235,27 @@ ion-icon[name="search-outline"] {
   -moz-appearance: none;
   cursor: pointer;
 }
+.option {
+  position: absolute;
+  bottom: 10px;
+  width: 200px;
+  background: var(--White);
+  bottom: -110px;
+
+  display: none;
+}
+.option div {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.select:hover .option {
+  display: initial;
+}
 .dark .fdiv--search span,
-.dark select {
+.dark .select {
   background: var(--DarkBlue);
   color: var(--White);
 }
