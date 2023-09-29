@@ -217,7 +217,7 @@ ion-icon[name="search-outline"] {
 .fdiv--filter {
   position: relative;
 }
-.fdiv--filter > div {
+.fdiv--filter .select {
   position: absolute;
   right: 0px;
 }
@@ -226,23 +226,22 @@ ion-icon[name="search-outline"] {
   width: 200px;
   height: 60px;
   background: var(--White);
-  outline: none;
   border-radius: 5px;
-  border: none;
   padding: 20px;
   font-size: 1rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  cursor: pointer;
+  display: flex;
+}
+.select span {
+  width: 150px;
 }
 .option {
-  position: absolute;
-  bottom: 10px;
   width: 200px;
-  background: var(--White);
-  bottom: -110px;
-
   display: none;
+  background: var(--White);
+  position: absolute;
+  right: 0px;
+  bottom: -190px;
+  border-top: 1px solid var(--Dark_Gray);
 }
 .option div {
   width: inherit;
@@ -250,32 +249,21 @@ ion-icon[name="search-outline"] {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-.select:hover .option {
-  display: initial;
-}
-.dark .fdiv--search span,
-.dark .select {
-  background: var(--DarkBlue);
-  color: var(--White);
-}
-
-.filter__Name {
-  display: flex;
-  position: absolute;
-  width: 200px;
-  top: 20px;
-  right: -20px;
-  z-index: 0.5;
+  padding: 8px;
   cursor: pointer;
 }
-
-ion-icon[name="close-circle-outline"] {
-  position: absolute;
-  right: 28px;
+.select:hover .option {
+  display: block;
 }
-ion-icon[name="close-circle-outline"]:hover {
-  color: red;
+.option div:hover {
+  background-color: rgb(71, 151, 255);
+}
+.dark .fdiv--search span,
+.dark .select,
+.dark .option {
+  background: var(--DarkBlue);
+  color: var(--White);
+  border-top: 1px solid var(--Very_Dark_Blue);
 }
 /* /////////////// mobile */
 @media screen and (max-width: 1200px) {
@@ -346,11 +334,11 @@ ion-icon[name="close-circle-outline"]:hover {
   .fdiv > div {
     width: 100%;
   }
-
-  .fdiv--filter div {
+  .fdiv--filter .select {
     position: initial;
   }
-  .filter__Name {
-    display: flex;
+  .option {
+    position: absolute;
+    left: 0;
   }
 }

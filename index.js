@@ -84,6 +84,10 @@ if (localStorage.getItem("dark-mode") === "true") {
   cont.classList.add("dark");
   fdiv.classList.add("dark");
 }
+
+//////////////--------------------Filter
+let select = document.querySelector(".option");
+let fvalue = document.querySelector(".select").querySelector("span");
 ///////////////--------------------search
 function search() {
   let sValue = document.getElementById("search");
@@ -118,16 +122,10 @@ function search() {
   });
 }
 
-//////////////--------------------Filter
-let select = document.getElementById("Filter");
-select.value = "";
 // Filter By Region
-function filter() {
-  let fvalue = document.querySelector(".filter__Name");
-
-  console.log(fvalue.innerText);
-  fvalue.innerText = "";
-  let sValue = select.value;
+function filter(e) {
+  fvalue.innerText = e.innerText;
+  let sValue = e.innerText;
 
   let card = document.querySelectorAll(".card");
 
